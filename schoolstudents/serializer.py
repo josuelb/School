@@ -1,8 +1,43 @@
 from rest_framework import serializers
-from .models import Student
+from .models import *
 
 
-class StudentSerializer(serializers.ModelSerializer):
+class AlunoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Student
-        fields = ['id', 'name', 'rg', 'nasc']
+        model = Aluno
+        fields = [
+            'id',
+            'nome',
+            'matricula',
+            'date_Nasc',
+            'sexo',
+            'curso'
+        ]
+
+
+class FuncionarioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Funcionario
+        fields = [
+            'id',
+            'nome',
+            'ID_FUNCIONARIO',
+            'date_Nasc',
+            'sexo',
+            'cargo',
+            'date_entrada'
+        ]
+
+
+class DiretoriaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Diretoria
+        fields = [
+            'id',
+            'nome',
+            'ID_FUNCIONARIO',
+            'date_Nasc',
+            'sexo',
+            'cargo',
+            'date_entrada'
+        ]

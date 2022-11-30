@@ -1,9 +1,19 @@
-from rest_framework import viewsets
-from .models import Student
-from .serializer import StudentSerializer
+from rest_framework import viewsets, response
+from .models import *
+from .serializer import *
 # Create your views here.
 
 
-class StudentsViewSets(viewsets.ModelViewSet):
-    queryset = Student.objects.all()
-    serializer_class = StudentSerializer
+class AlunoViews(viewsets.ModelViewSet):
+    queryset = Aluno.objects.all()
+    serializer_class = AlunoSerializer
+
+
+class FuncionarioViews(viewsets.ModelViewSet):
+    queryset = Funcionario.objects.all()
+    serializer_class = FuncionarioSerializer
+
+
+class DiretoriaViews(viewsets.ModelViewSet):
+    queryset = Diretoria.objects.all()
+    serializer_class = DiretoriaSerializer
