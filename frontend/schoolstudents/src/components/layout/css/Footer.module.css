@@ -1,0 +1,9 @@
+.container_footer{
+    background-color: #222;
+    color: #efefef;
+}
+
+.footer{
+    justify-content: center;
+    color: rgba(255, 255, 0, 0.678);
+}

@@ -1,0 +1,14 @@
+.container_funcionario{
+    padding: 1em 2em;
+    width: 100%;
+}
+
+.title{
+    align-content: center;
+    padding: 1em 0 1em 0;
+}
+
+.cards_list{
+    display: flex;
+    justify-content: space-between;
+}
