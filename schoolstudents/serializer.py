@@ -29,15 +29,10 @@ class FuncionarioSerializer(serializers.ModelSerializer):
         ]
 
 
-class DiretoriaSerializer(serializers.ModelSerializer):
+class CargosSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Diretoria
+        model = Cargos
         fields = [
-            'id',
-            'nome',
-            'ID_FUNCIONARIO',
-            'date_Nasc',
-            'sexo',
-            'cargo',
-            'date_entrada'
+            "ID_CARGOS",
+            'nome'
         ]

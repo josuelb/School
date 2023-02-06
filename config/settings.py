@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure-a=ewp=9wdj#!$5535&ax+q)c!&qfu1kwpe3ejho_sjn9^bk^+)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -71,14 +74,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'school',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
 
@@ -101,6 +111,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/

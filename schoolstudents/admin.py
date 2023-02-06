@@ -53,26 +53,17 @@ class Funcionarios(admin.ModelAdmin):
     )
 
 
-@admin.register(Diretoria)
-class Diretorias(admin.ModelAdmin):
+@admin.register(Cargos)
+class Cargo(admin.ModelAdmin):
     list_display = (
-        "id",
-        "nome",
-        "ID_FUNCIONARIO",
-        "date_Nasc",
-        "sexo",
-        "cargo",
-        "date_entrada"
+        "ID_CARGOS",
+        "nome"
     )
     list_display_links = (
-        "id",
-        "nome",
-        "ID_FUNCIONARIO"
+        "ID_CARGOS",
+        "nome"
     )
     search_fields = (
-        "id",
-        "nome",
-        "ID_FUNCIONARIO",
-        "cargo",
-        "date_entrada"
+        "ID_CARGOS",
+        "nome"
     )
